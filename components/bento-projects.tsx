@@ -2,22 +2,25 @@ import { ArrowUpRight } from 'lucide-react';
 
 const PROJECTS = [
     {
-        title: 'SEED Platform',
+        title: 'SEED Enterprise',
         category: 'Full-Stack',
         span: 'col-span-12 lg:col-span-12',
         color: 'from-indigo-500/10',
+        description: 'A robust workflow optimization platform reducing internal processing time by 40%.'
     },
     {
-        title: 'GDG Campus',
+        title: 'GDG Learning Hub',
         category: 'Community',
         span: 'col-span-12 md:col-span-7',
         color: 'from-purple-500/10',
+        description: 'An educational portal serving 500+ local developers with resources and event tracking.'
     },
     {
-        title: 'UX Lab',
-        category: 'Design',
+        title: 'FadidevStudio',
+        category: 'Design System',
         span: 'col-span-12 md:col-span-5',
         color: 'from-blue-500/10',
+        description: 'The hyper-modern bento portfolio you are looking at right now.'
     }
 ];
 
@@ -50,7 +53,7 @@ export function BentoProjects() {
 
                                 <div className="relative z-10 mt-20 opacity-40 group-hover:opacity-100 transition-opacity">
                                     <p className="max-w-md font-medium text-white/60">
-                                        A comprehensive deep-dive into product strategy, system design, and high-performance implementation.
+                                        {project.description}
                                     </p>
                                 </div>
                             </div>
