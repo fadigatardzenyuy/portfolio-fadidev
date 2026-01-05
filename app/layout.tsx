@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fadidev.studio"),
+  metadataBase: new URL("https://fadidev-studio.vercel.app"),
   title: {
     default: "FadidevStudio – UI/UX-Focused Full-Stack Developer",
     template: "%s | FadidevStudio",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FadidevStudio – UI/UX-Focused Full-Stack Developer",
     description: "UI/UX-focused full-stack developer building scalable, user-centered web products.",
-    url: "https://fadidev.studio",
+    url: "https://fadidev-studio.vercel.app",
     siteName: "FadidevStudio",
     locale: "en_US",
     type: "website",

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://fadidev.studio/sitemap.xml',
+        sitemap: 'https://fadidev-studio.vercel.app/sitemap.xml',
     };
 }

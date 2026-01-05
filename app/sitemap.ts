@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const posts = getAllPosts();
-    const baseUrl = 'https://fadidev.studio';
+    const baseUrl = 'https://fadidev-studio.vercel.app';
 
     const blogPosts = posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
