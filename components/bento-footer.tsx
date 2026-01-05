@@ -6,12 +6,12 @@ export function BentoFooter() {
             <div className="mx-auto max-w-7xl">
                 <div className="bento-grid">
 
-                    <div className="glass-card col-span-12 md:col-span-8 p-12 flex flex-col justify-between">
-                        <h2 className="text-5xl font-black tracking-tighter mb-12">
+                    <div className="glass-card col-span-12 md:col-span-8 p-8 md:p-12 flex flex-col justify-between">
+                        <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-8 md:mb-12">
                             Let&apos;s build the <br />
                             <span className="text-primary">next big thing</span>.
                         </h2>
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4">
                             <a href="mailto:fadidevstudio@gmail.com" className="px-10 py-4 bg-white text-black rounded-full font-black hover:scale-105 transition-transform flex items-center justify-center">
                                 Hire Abdul
                             </a>

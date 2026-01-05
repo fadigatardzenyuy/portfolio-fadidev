@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @theme {
   --color-background: #030303;
@@ -52,7 +53,14 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-auto-rows: minmax(100px, auto);
-    gap: 1.5rem;
+    gap: 1rem;
+    /* Smaller gap on mobile */
+  }
+
+  @media (min-width: 768px) {
+    .bento-grid {
+      gap: 1.5rem;
+    }
   }
 
   .glow-indigo {
@@ -60,9 +68,10 @@
   }
 
   .editorial-heading {
-    font-size: clamp(2.5rem, 10vw, 7rem);
-    line-height: 0.85;
-    letter-spacing: -0.05em;
+    font-size: clamp(2.2rem, 12vw, 4.5rem);
+    /* Adjusted clamp for better mobile scaling */
+    line-height: 0.9;
+    letter-spacing: -0.06em;
     font-weight: 900;
   }
 
