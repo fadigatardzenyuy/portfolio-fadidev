@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title,
             description,
             type: 'article',
-            url: `https://fadidev.studio/blog/${post.slug}`,
+            url: `https://fadidev-studio.vercel.app/blog/${post.slug}`,
             images: [
                 {
                     url: post.coverImage,
