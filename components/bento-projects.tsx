@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const PROJECTS = [
     {
@@ -30,7 +30,7 @@ const PROJECTS = [
     }
 ];
 
-const container = {
+const container: Variants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
@@ -40,12 +40,20 @@ const container = {
     }
 };
 
-const item = {
+const item: Variants = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
 };
 
 export function BentoProjects() {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        e.currentTarget.style.setProperty('--mouse-x', `${x}%`);
+        e.currentTarget.style.setProperty('--mouse-y', `${y}%`);
+    };
+
     return (
         <section id="work" className="px-6 py-12 md:px-12 lg:px-24">
             <div className="mx-auto max-w-7xl">
@@ -68,6 +76,7 @@ export function BentoProjects() {
                         <motion.div
                             key={index}
                             variants={item}
+                            onMouseMove={handleMouseMove}
                             className={`glass-card ${project.span} p-1 relative group cursor-pointer`}
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${project.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
@@ -79,6 +88,11 @@ export function BentoProjects() {
                                         <div className="absolute inset-0 bg-white/5" />
                                         <img src={project.image} alt={project.title} className="h-full w-full object-cover object-top opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
                                     </div>
+                                </div>
+
+                                {/* Spotlight Overlay */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
+                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(99,102,241,0.15),transparent_80%)]" />
                                 </div>
 
                                 <div className="relative z-10 flex justify-between items-start">

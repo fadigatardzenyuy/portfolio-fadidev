@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { CommandCenter } from "@/components/command-center";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -84,7 +85,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="aurora-bg">
+            <div className="aurora-mesh" />
+          </div>
           <div className="noise-overlay" />
+          <CommandCenter />
           {children}
         </ThemeProvider>
       </body>

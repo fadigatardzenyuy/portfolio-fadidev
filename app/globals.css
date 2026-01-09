@@ -45,7 +45,10 @@
   }
 
   .glass-card {
-    @apply bg-white/[0.03] border border-white/8 backdrop-blur-xl rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:bg-white/[0.05] hover:border-white/15;
+    @apply bg-white/[0.015] border border-white/[0.08] backdrop-blur-[24px] rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:bg-white/[0.04] hover:border-white/[0.15];
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+      0 20px 50px -12px rgba(0, 0, 0, 0.5);
     animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
@@ -67,9 +70,47 @@
     inset: -200%;
     z-index: 100;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.04;
+    opacity: 0.03;
     pointer-events: none;
     animation: noise 0.5s steps(2) infinite;
+  }
+
+  .aurora-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: #030303;
+    filter: blur(100px);
+    opacity: 0.4;
+  }
+
+  .aurora-mesh {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image:
+      radial-gradient(circle at 20% 30%, #6366F1 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, #A855F7 0%, transparent 40%),
+      radial-gradient(circle at 50% 10%, #3B82F6 0%, transparent 40%),
+      radial-gradient(circle at 30% 80%, #1E40AF 0%, transparent 40%);
+    animation: aurora-move 20s linear infinite;
+  }
+
+  @keyframes aurora-move {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+      transform: rotate(180deg) scale(1.2);
+    }
+
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
   }
 
   @keyframes noise {
@@ -119,7 +160,7 @@
   }
 
   .glow-indigo {
-    background: radial-gradient(1000px circle at center, rgba(99, 102, 241, 0.12), transparent 80%);
+    background: radial-gradient(1000px circle at center, rgba(99, 102, 241, 0.1), transparent 80%);
   }
 
   .editorial-heading {
