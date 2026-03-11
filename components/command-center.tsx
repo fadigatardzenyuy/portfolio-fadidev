@@ -55,7 +55,7 @@ export function CommandCenter() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 onClick={() => setIsOpen(true)}
-                className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-4 py-2 bg-white/5 border border-white/10 backdrop-blur-xl rounded-full flex items-center gap-3 group hover:bg-white/10 transition-all cursor-pointer shadow-2xl"
+                className="hidden md:flex fixed bottom-12 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-[#0a0a0a]/80 border border-white/10 backdrop-blur-xl rounded-full items-center gap-4 group hover:bg-white/10 transition-all cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             >
                 <div className="flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-white/10 text-[10px] font-black opacity-40 uppercase tracking-tighter">
                     <Command className="h-2.5 w-2.5" /> K
