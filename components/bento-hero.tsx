@@ -39,25 +39,25 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-center justify-between mb-12"
+                    className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-12"
                 >
                     <div className="flex items-center gap-2">
-                        <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-primary text-white font-black text-xs">
+                        <div className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center rounded-lg bg-primary text-white font-black text-[10px] md:text-xs">
                             FD
                         </div>
-                        <span className="text-xl font-black tracking-tighter uppercase">FadidevStudio</span>
+                        <span className="text-lg md:text-xl font-black tracking-tighter uppercase whitespace-nowrap">FadidevStudio</span>
                     </div>
 
-                    <div className="flex items-center gap-12">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12 w-full sm:w-auto">
                         <HeaderPresence />
                         <nav className="flex items-center gap-6">
                             <Magnetic strength={0.2}>
-                                <a href="/blog" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors p-2">
+                                <a href="/blog" className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors py-2">
                                     Blog
                                 </a>
                             </Magnetic>
                             <Magnetic strength={0.2}>
-                                <a href="mailto:fadidevstudio@gmail.com" className="text-sm font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors p-2">
+                                <a href="mailto:fadidevstudio@gmail.com" className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors py-2">
                                     Contact
                                 </a>
                             </Magnetic>
@@ -111,7 +111,7 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                         </div>
                         <div className="space-y-4">
                             <Magnetic>
-                                <a href="https://www.linkedin.com/in/abdul-fadiga-775a5a284/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500 w-full">
+                                <a href="https://www.linkedin.com/in/abdul-fadiga-775a5a284/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500 w-full block">
                                     <div className="flex items-center gap-4">
                                         <Linkedin className="h-5 w-5" />
                                         <span className="font-bold">LinkedIn</span>
@@ -120,7 +120,7 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                                 </a>
                             </Magnetic>
                             <Magnetic>
-                                <a href="https://github.com/fadigatardzenyuy" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500 w-full">
+                                <a href="https://github.com/fadigatardzenyuy" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500 w-full block">
                                     <div className="flex items-center gap-4">
                                         <Github className="h-5 w-5" />
                                         <span className="font-bold">GitHub</span>
@@ -129,7 +129,7 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                                 </a>
                             </Magnetic>
                             <Magnetic>
-                                <a href="mailto:fadidevstudio@gmail.com" className="flex items-center justify-between group p-4 rounded-2xl bg-primary text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-500 w-full">
+                                <a href="mailto:fadidevstudio@gmail.com" className="flex items-center justify-between group p-4 rounded-2xl bg-primary text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-500 w-full block">
                                     <div className="flex items-center gap-4">
                                         <Mail className="h-5 w-5" />
                                         <span className="font-bold">Send Message</span>
