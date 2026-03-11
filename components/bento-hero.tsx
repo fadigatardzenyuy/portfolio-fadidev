@@ -30,7 +30,7 @@ const item: Variants = {
 
 export function BentoHero({ latestPost }: BentoHeroProps) {
     return (
-        <section className="relative px-6 pt-24 pb-12 md:px-12 lg:px-24">
+        <section className="relative px-4 md:px-12 lg:px-24 pt-24 md:pt-32 pb-4 overflow-hidden max-w-full">
             {/* Background Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full glow-indigo pointer-events-none" />
 

@@ -35,7 +35,7 @@ export function HeaderPresence() {
     if (!mounted) return null;
 
     return (
-        <div className="flex items-center gap-3 md:gap-6 text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
+        <div className="flex items-center gap-2 md:gap-4 text-[7px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
             <div className="flex items-center gap-1.5 md:gap-2">
                 <MapPin className="h-2.5 w-2.5 md:h-3 md:w-3" />
                 <span className="whitespace-nowrap">Bambili, CM</span>
