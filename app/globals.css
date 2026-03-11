@@ -187,6 +187,12 @@ html {
   background: #030303;
 }
 
+@media (min-width: 1024px) {
+  * {
+    cursor: none !important;
+  }
+}
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }

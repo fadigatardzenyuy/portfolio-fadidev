@@ -73,6 +73,8 @@ export const metadata: Metadata = {
 
 import { LenisProvider } from "@/components/lenis-provider";
 
+import { CustomCursor } from "@/components/custom-cursor";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -88,6 +90,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LenisProvider>
+            <CustomCursor />
             <div className="aurora-bg">
               <div className="aurora-mesh" />
             </div>

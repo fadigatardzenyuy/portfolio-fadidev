@@ -26,6 +26,8 @@ const item: Variants = {
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
 };
 
+import { Magnetic } from './magnetic';
+
 export function BentoHero({ latestPost }: BentoHeroProps) {
     return (
         <section className="relative px-6 pt-24 pb-12 md:px-12 lg:px-24">
@@ -47,12 +49,16 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                     </div>
 
                     <nav className="flex items-center gap-6">
-                        <a href="/blog" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors">
-                            Blog
-                        </a>
-                        <a href="mailto:fadidevstudio@gmail.com" className="text-sm font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors">
-                            Contact
-                        </a>
+                        <Magnetic strength={0.2}>
+                            <a href="/blog" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors p-2">
+                                Blog
+                            </a>
+                        </Magnetic>
+                        <Magnetic strength={0.2}>
+                            <a href="mailto:fadidevstudio@gmail.com" className="text-sm font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors p-2">
+                                Contact
+                            </a>
+                        </Magnetic>
                     </nav>
                 </motion.div>
 
@@ -101,27 +107,33 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                             </div>
                         </div>
                         <div className="space-y-4">
-                            <a href="https://www.linkedin.com/in/abdul-fadiga-775a5a284/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500">
-                                <div className="flex items-center gap-4">
-                                    <Linkedin className="h-5 w-5" />
-                                    <span className="font-bold">LinkedIn</span>
-                                </div>
-                                <ArrowUpRight className="h-4 w-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-                            </a>
-                            <a href="https://github.com/fadigatardzenyuy" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500">
-                                <div className="flex items-center gap-4">
-                                    <Github className="h-5 w-5" />
-                                    <span className="font-bold">GitHub</span>
-                                </div>
-                                <ArrowUpRight className="h-4 w-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-                            </a>
-                            <a href="mailto:fadidevstudio@gmail.com" className="flex items-center justify-between group p-4 rounded-2xl bg-primary text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-500">
-                                <div className="flex items-center gap-4">
-                                    <Mail className="h-5 w-5" />
-                                    <span className="font-bold">Send Message</span>
-                                </div>
-                                <ArrowUpRight className="h-4 w-4" />
-                            </a>
+                            <Magnetic>
+                                <a href="https://www.linkedin.com/in/abdul-fadiga-775a5a284/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500 w-full">
+                                    <div className="flex items-center gap-4">
+                                        <Linkedin className="h-5 w-5" />
+                                        <span className="font-bold">LinkedIn</span>
+                                    </div>
+                                    <ArrowUpRight className="h-4 w-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                                </a>
+                            </Magnetic>
+                            <Magnetic>
+                                <a href="https://github.com/fadigatardzenyuy" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-500 w-full">
+                                    <div className="flex items-center gap-4">
+                                        <Github className="h-5 w-5" />
+                                        <span className="font-bold">GitHub</span>
+                                    </div>
+                                    <ArrowUpRight className="h-4 w-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                                </a>
+                            </Magnetic>
+                            <Magnetic>
+                                <a href="mailto:fadidevstudio@gmail.com" className="flex items-center justify-between group p-4 rounded-2xl bg-primary text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all duration-500 w-full">
+                                    <div className="flex items-center gap-4">
+                                        <Mail className="h-5 w-5" />
+                                        <span className="font-bold">Send Message</span>
+                                    </div>
+                                    <ArrowUpRight className="h-4 w-4" />
+                                </a>
+                            </Magnetic>
                         </div>
                     </motion.div>
 
