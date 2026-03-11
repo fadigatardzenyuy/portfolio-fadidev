@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { CommandCenter } from "@/components/command-center";
+import { MobileFAB } from "@/components/mobile-fab";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -97,6 +98,7 @@ export default function RootLayout({
             <div className="noise-overlay" />
             <CommandCenter />
             {children}
+            <MobileFAB />
           </LenisProvider>
         </ThemeProvider>
       </body>

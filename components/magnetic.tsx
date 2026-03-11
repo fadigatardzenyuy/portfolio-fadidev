@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import { haptics } from "@/lib/haptics";
 
 interface MagneticProps {
     children: ReactNode;
@@ -34,6 +35,7 @@ export function Magnetic({ children, strength = 0.5 }: MagneticProps) {
             ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onMouseDown={() => haptics.light()}
             animate={{ x, y }}
             transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             className="inline-block"

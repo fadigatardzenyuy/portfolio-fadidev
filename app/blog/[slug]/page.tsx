@@ -62,9 +62,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default async function BlogPostPage({ params }: Props) {
-    const { slug } = await params;
-    const post = getPostBySlug(slug);
+import { ReadingProgress } from "@/components/reading-progress";
+
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+    const post = await getPostBySlug(params.slug);
 
     if (!post) {
         notFound();
@@ -72,6 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
 
     return (
         <main className="min-h-screen bg-[#030303] text-white selection:bg-primary selection:text-white pb-24">
+            <ReadingProgress />
 
             {/* Hero / Header */}
             <header className="relative w-full h-[60vh] min-h-[400px] flex items-end">
