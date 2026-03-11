@@ -35,15 +35,15 @@ export function HeaderPresence() {
     if (!mounted) return null;
 
     return (
-        <div className="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
-            <div className="flex items-center gap-2">
-                <MapPin className="h-3 w-3" />
-                <span>Bambili, CM</span>
+        <div className="flex items-center gap-3 md:gap-6 text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
+            <div className="flex items-center gap-1.5 md:gap-2">
+                <MapPin className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                <span className="whitespace-nowrap">Bambili, CM</span>
             </div>
-            <div className="h-4 w-[1px] bg-white/10" />
-            <div className="flex items-center gap-2">
+            <div className="h-3 md:h-4 w-[1px] bg-white/10" />
+            <div className="flex items-center gap-1.5 md:gap-2">
                 <span>{time}</span>
-                <span className="opacity-50">{date}</span>
+                <span className="opacity-50 hidden sm:inline">{date}</span>
             </div>
         </div>
     );

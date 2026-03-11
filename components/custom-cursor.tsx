@@ -20,6 +20,10 @@ export function CustomCursor() {
         checkMobile();
         window.addEventListener('resize', checkMobile);
 
+        if (window.innerWidth < 1024) {
+            return () => window.removeEventListener('resize', checkMobile);
+        }
+
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX);
             cursorY.set(e.clientY);

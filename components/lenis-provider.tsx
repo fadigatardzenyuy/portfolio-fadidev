@@ -12,6 +12,9 @@ export function LenisProvider({ children }: { children: ReactNode }) {
             wheelMultiplier: 1,
             touchMultiplier: 2,
             infinite: false,
+            // Only enable on desktop
+            autoRaf: true,
+            syncTouch: false, // Ensure native feel on mobile
         }}>
             {children}
         </ReactLenis>
