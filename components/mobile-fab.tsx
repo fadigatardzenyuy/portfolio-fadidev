@@ -6,8 +6,10 @@ import { haptics } from '@/lib/haptics';
 
 export function MobileFAB() {
     const [isVisible, setIsVisible] = useState(false);
+    const [hasMounted, setHasMounted] = useState(false);
 
     useEffect(() => {
+        setHasMounted(true);
         const toggleVisibility = () => {
             // Only show after scrolling down a bit
             if (window.scrollY > 300) {
@@ -20,6 +22,8 @@ export function MobileFAB() {
         window.addEventListener('scroll', toggleVisibility);
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
+
+    if (!hasMounted) return null;
 
     const handleClick = () => {
         haptics.medium();

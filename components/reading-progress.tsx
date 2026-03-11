@@ -4,8 +4,10 @@ import React, { useEffect, useState } from 'react';
 
 export function ReadingProgress() {
     const [completion, setCompletion] = useState(0);
+    const [hasMounted, setHasMounted] = useState(false);
 
     useEffect(() => {
+        setHasMounted(true);
         const updateScroll = () => {
             const currentProgress = window.scrollY;
             const scrollHeight = document.body.scrollHeight - window.innerHeight;
@@ -19,6 +21,8 @@ export function ReadingProgress() {
         window.addEventListener('scroll', updateScroll);
         return () => window.removeEventListener('scroll', updateScroll);
     }, []);
+
+    if (!hasMounted) return null;
 
     return (
         <div className="fixed top-0 left-0 right-0 z-[100] h-1 bg-white/10 pointer-events-none">
