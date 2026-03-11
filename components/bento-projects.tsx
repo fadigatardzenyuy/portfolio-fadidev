@@ -6,26 +6,26 @@ import { motion, Variants } from 'framer-motion';
 const PROJECTS = [
     {
         title: 'Zigex Internship Platform',
-        category: 'Education • Full-Stack',
+        category: 'Next.js • React • Tailwind CSS',
         span: 'col-span-12 lg:col-span-12',
         color: 'from-blue-500/10',
-        description: 'Platform connecting students with internship opportunities in Cameroon. Built with Next.js and React.',
+        description: 'Platform connecting students with internship opportunities.',
         image: '/blog/hello-world.png'
     },
     {
         title: 'Logistics Tracking Platform',
-        category: 'Business • Logistics',
+        category: 'Laravel • JavaScript • HTML • CSS',
         span: 'col-span-12 md:col-span-7',
         color: 'from-emerald-500/10',
-        description: 'Shipment tracking system allowing users to track packages using tracking codes. Built with Laravel and JavaScript.',
+        description: 'Shipment tracking system allowing users to track packages using tracking codes.',
         image: '/blog/hello-world.png'
     },
     {
-        title: 'Pet Rental & E-Commerce',
-        category: 'E-Commerce • Product',
+        title: 'Pet Rental & E-Commerce Platform',
+        category: 'Next.js • React • Tailwind CSS',
         span: 'col-span-12 md:col-span-5',
         color: 'from-sky-500/10',
-        description: 'Online platform for pet rentals and product sales. Built with Next.js and Tailwind CSS.',
+        description: 'Online platform for pet rentals and product sales.',
         image: '/blog/hello-world.png'
     }
 ];
