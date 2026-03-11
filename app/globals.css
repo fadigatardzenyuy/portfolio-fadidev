@@ -213,8 +213,8 @@ html {
 }
 
 @media (min-width: 1024px) {
-  * {
-    cursor: none !important;
+  body {
+    cursor: none;
   }
 }
 
