@@ -137,6 +137,10 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                                 <p className="text-sm font-bold text-primary">SEED</p>
                             </div>
                             <div className="group-hover:translate-x-2 transition-transform duration-500 delay-75">
+                                <h4 className="text-lg font-black leading-none mb-1">Web Dev Instructor</h4>
+                                <p className="text-sm font-bold text-primary">Internship Program</p>
+                            </div>
+                            <div className="group-hover:translate-x-2 transition-transform duration-500 delay-100">
                                 <h4 className="text-lg font-black leading-none mb-1">Co-Lead Frontend</h4>
                                 <p className="text-sm font-bold text-primary">GDG Bambili</p>
                             </div>

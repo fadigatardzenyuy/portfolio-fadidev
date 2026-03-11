@@ -5,27 +5,27 @@ import { motion, Variants } from 'framer-motion';
 
 const PROJECTS = [
     {
-        title: 'Healthcare Appointment Platform',
-        category: 'Product • Full-Stack',
+        title: 'Zigex Internship Platform',
+        category: 'Education • Full-Stack',
         span: 'col-span-12 lg:col-span-12',
-        color: 'from-emerald-500/10',
-        description: 'A digital healthcare booking platform that reduced patient wait times from hours to minutes through streamlined appointment workflows and real-time hospital coordination.',
-        image: '/blog/hello-world.png'
-    },
-    {
-        title: 'Zigex ',
-        category: 'Education • Frontend-Focused',
-        span: 'col-span-12 md:col-span-7',
-        color: 'from-sky-500/10',
-        description: 'A structured internship and learning platform designed to onboard, track, and guide aspiring developers through curated frontend training and real-world tasks.',
-        image: '/blog/hello-world.png'
-    },
-    {
-        title: 'FadidevStudio',
-        category: 'Design System',
-        span: 'col-span-12 md:col-span-5',
         color: 'from-blue-500/10',
-        description: 'The hyper-modern bento portfolio you are looking at right now.',
+        description: 'Platform connecting students with internship opportunities in Cameroon. Built with Next.js and React.',
+        image: '/blog/hello-world.png'
+    },
+    {
+        title: 'Logistics Tracking Platform',
+        category: 'Business • Logistics',
+        span: 'col-span-12 md:col-span-7',
+        color: 'from-emerald-500/10',
+        description: 'Shipment tracking system allowing users to track packages using tracking codes. Built with Laravel and JavaScript.',
+        image: '/blog/hello-world.png'
+    },
+    {
+        title: 'Pet Rental & E-Commerce',
+        category: 'E-Commerce • Product',
+        span: 'col-span-12 md:col-span-5',
+        color: 'from-sky-500/10',
+        description: 'Online platform for pet rentals and product sales. Built with Next.js and Tailwind CSS.',
         image: '/blog/hello-world.png'
     }
 ];

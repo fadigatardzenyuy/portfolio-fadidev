@@ -61,40 +61,71 @@ export default function ResumeClient() {
 
                             <div className="mb-8">
                                 <div className="flex justify-between items-baseline mb-2">
-                                    <h3 className="text-xl font-bold">Web Developer Lead</h3>
-                                    <span className="text-sm font-bold text-gray-500">Present</span>
+                                    <h3 className="text-xl font-bold">Web Development Instructor</h3>
+                                    <span className="text-sm font-bold text-gray-500">2025 – Present</span>
                                 </div>
-                                <div className="text-primary font-bold mb-3">SEED</div>
+                                <div className="text-primary font-bold mb-3">Internship Training Program</div>
                                 <ul className="list-disc list-outside ml-4 space-y-1 text-gray-700">
-                                    <li>Leading the frontend architecture and strategy for enterprise-grade web solutions.</li>
-                                    <li>Mentoring junior developers and establishing code quality standards.</li>
-                                    <li>Bridging the gap between UI/UX design and technical implementation for scalable products.</li>
+                                    <li>Mentored interns in HTML, CSS, JavaScript, React, and frontend best practices.</li>
+                                    <li>Guided students from beginner to intermediate developer level.</li>
+                                    <li>Designed coding challenges and real-world development tasks.</li>
+                                </ul>
+                            </div>
+
+                            <div className="mb-8">
+                                <div className="flex justify-between items-baseline mb-2">
+                                    <h3 className="text-xl font-bold">Frontend Developer</h3>
+                                    <span className="text-sm font-bold text-gray-500">2026 (1 Month Contract)</span>
+                                </div>
+                                <div className="text-primary font-bold mb-3">Real Estate Exchange</div>
+                                <ul className="list-disc list-outside ml-4 space-y-1 text-gray-700">
+                                    <li>Developed responsive user interfaces for a real estate platform.</li>
+                                    <li>Built reusable UI components and improved layout responsiveness.</li>
+                                    <li>Collaborated with backend developers to integrate APIs.</li>
+                                </ul>
+                            </div>
+
+                            <div className="mb-8">
+                                <div className="flex justify-between items-baseline mb-2">
+                                    <h3 className="text-xl font-bold">Frontend Developer</h3>
+                                    <span className="text-sm font-bold text-gray-500">2026</span>
+                                </div>
+                                <div className="text-primary font-bold mb-3">Zigex Internship Platform</div>
+                                <ul className="list-disc list-outside ml-4 space-y-1 text-gray-700">
+                                    <li>Contributed to development of a platform helping students find internships in Cameroon.</li>
+                                    <li>Built frontend features using Next.js and React.</li>
+                                    <li>Implemented responsive layouts optimized for mobile and desktop.</li>
                                 </ul>
                             </div>
 
                             <div>
                                 <div className="flex justify-between items-baseline mb-2">
-                                    <h3 className="text-xl font-bold">Co-Lead (Frontend)</h3>
-                                    <span className="text-sm font-bold text-gray-500">Present</span>
+                                    <h3 className="text-xl font-bold">Freelance Web Developer</h3>
+                                    <span className="text-sm font-bold text-gray-500">2024 – Present</span>
                                 </div>
-                                <div className="text-primary font-bold mb-3">GDG On Campus Bambili</div>
+                                <div className="text-primary font-bold mb-3">Self-Employed</div>
                                 <ul className="list-disc list-outside ml-4 space-y-1 text-gray-700">
-                                    <li>Organizing workshops and tech sessions to upskill the local developer community.</li>
-                                    <li>Spearheading frontend development initiatives and hackathons.</li>
+                                    <li>Built logistics tracking platforms for shipment tracking.</li>
+                                    <li>Developed pet rental and e-commerce platforms.</li>
+                                    <li>Created business websites using Next.js, React, and Tailwind CSS.</li>
                                 </ul>
                             </div>
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-black uppercase tracking-widest border-b border-gray-200 pb-2 mb-6">Projects</h2>
+                            <h2 className="text-2xl font-black uppercase tracking-widest border-b border-gray-200 pb-2 mb-6">Featured Projects</h2>
                             <div className="space-y-6">
                                 <div>
-                                    <h3 className="text-lg font-bold">SEED Enterprise Platform</h3>
-                                    <p className="text-gray-700">A robust web platform optimizing workflow efficiency for internal teams.</p>
+                                    <h3 className="text-lg font-bold">Zigex Internship Platform</h3>
+                                    <p className="text-gray-700">Platform connecting students with internship opportunities. Tech Stack: Next.js, React, Tailwind CSS</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-lg font-bold">Community Learning Hub</h3>
-                                    <p className="text-gray-700">An accessible educational resource portal built for the GDG community.</p>
+                                    <h3 className="text-lg font-bold">Logistics Tracking Platform</h3>
+                                    <p className="text-gray-700">Shipment tracking system allowing users to track packages using tracking codes. Tech Stack: Laravel, JavaScript, HTML, CSS</p>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold">Pet Rental & E-Commerce Platform</h3>
+                                    <p className="text-gray-700">Online platform for pet rentals and product sales. Tech Stack: Next.js, React, Tailwind CSS</p>
                                 </div>
                             </div>
                         </section>
@@ -135,11 +166,18 @@ export default function ResumeClient() {
                         </section>
 
                         <section>
+                            <h2 className="text-lg font-black uppercase tracking-widest border-b border-gray-200 pb-2 mb-4">Achievements</h2>
+                            <ul className="list-disc list-outside ml-4 space-y-2 text-sm text-gray-700">
+                                <li>Trained interns from beginner to intermediate web developers.</li>
+                                <li>Built multiple production web platforms for businesses and clients.</li>
+                                <li>Contributed to platforms helping students access internship opportunities.</li>
+                            </ul>
+                        </section>
+
+                        <section>
                             <h2 className="text-lg font-black uppercase tracking-widest border-b border-gray-200 pb-2 mb-4">Education</h2>
                             <div>
-                                <h3 className="font-bold">Computer Engineering</h3>
-                                <p className="text-sm text-gray-600">University of Bamenda</p>
-                                <p className="text-sm text-gray-500 italic">Bambili, Cameroon</p>
+                                <p className="text-sm text-gray-700">Self-Taught Software Developer with continuous learning in Next.js development, modern React architecture, and web application performance.</p>
                             </div>
                         </section>
 
