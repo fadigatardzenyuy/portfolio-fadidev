@@ -1,10 +1,12 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { ArrowUpRight, Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { BlogPost } from '@/lib/blog';
 import { TechStack } from './tech-stack-card';
+import { HeaderPresence } from './header-presence';
+import { Magnetic } from './magnetic';
 
 interface BentoHeroProps {
     latestPost?: BlogPost;
@@ -26,8 +28,6 @@ const item: Variants = {
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
 };
 
-import { Magnetic } from './magnetic';
-
 export function BentoHero({ latestPost }: BentoHeroProps) {
     return (
         <section className="relative px-6 pt-24 pb-12 md:px-12 lg:px-24">
@@ -48,18 +48,21 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                         <span className="text-xl font-black tracking-tighter uppercase">FadidevStudio</span>
                     </div>
 
-                    <nav className="flex items-center gap-6">
-                        <Magnetic strength={0.2}>
-                            <a href="/blog" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors p-2">
-                                Blog
-                            </a>
-                        </Magnetic>
-                        <Magnetic strength={0.2}>
-                            <a href="mailto:fadidevstudio@gmail.com" className="text-sm font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors p-2">
-                                Contact
-                            </a>
-                        </Magnetic>
-                    </nav>
+                    <div className="flex items-center gap-12">
+                        <HeaderPresence />
+                        <nav className="flex items-center gap-6">
+                            <Magnetic strength={0.2}>
+                                <a href="/blog" className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors p-2">
+                                    Blog
+                                </a>
+                            </Magnetic>
+                            <Magnetic strength={0.2}>
+                                <a href="mailto:fadidevstudio@gmail.com" className="text-sm font-bold uppercase tracking-widest text-primary hover:text-primary/80 transition-colors p-2">
+                                    Contact
+                                </a>
+                            </Magnetic>
+                        </nav>
+                    </div>
                 </motion.div>
 
                 <motion.div
@@ -137,87 +140,70 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                         </div>
                     </motion.div>
 
-                    {/* Leadership Roles */}
+                    {/* Leadership Roles Card */}
                     <motion.div
                         variants={item}
-                        className="glass-card col-span-12 md:col-span-6 lg:col-span-4 p-8 group"
+                        className="glass-card col-span-12 md:col-span-6 lg:col-span-4 p-8 group flex flex-col justify-between"
                     >
-                        <h3 className="text-sm font-bold uppercase tracking-[0.2em] opacity-30 mb-8">Leadership</h3>
-                        <div className="space-y-8">
-                            <div className="group-hover:translate-x-2 transition-transform duration-500">
-                                <h4 className="text-lg font-black leading-none mb-1">Web Dev Lead</h4>
-                                <p className="text-sm font-bold text-primary">SEED</p>
-                            </div>
-                            <div className="group-hover:translate-x-2 transition-transform duration-500 delay-75">
-                                <h4 className="text-lg font-black leading-none mb-1">Web Dev Instructor</h4>
-                                <p className="text-sm font-bold text-primary">Internship Program</p>
-                            </div>
-                            <div className="group-hover:translate-x-2 transition-transform duration-500 delay-100">
-                                <h4 className="text-lg font-black leading-none mb-1">Co-Lead Frontend</h4>
-                                <p className="text-sm font-bold text-primary">GDG Bambili</p>
+                        <div className="relative">
+                            <h3 className="text-sm font-bold uppercase tracking-[0.2em] opacity-30 mb-8">Leadership</h3>
+                            <div className="space-y-6">
+                                <div className="group-hover:translate-x-2 transition-transform duration-500">
+                                    <h4 className="text-xl font-black leading-none mb-1">Web Dev Lead</h4>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-primary">SEED</p>
+                                </div>
+                                <div className="group-hover:translate-x-2 transition-transform duration-500 delay-75">
+                                    <h4 className="text-xl font-black leading-none mb-1">Web Dev Instructor</h4>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-primary">Mentorship</p>
+                                </div>
+                                <div className="group-hover:translate-x-2 transition-transform duration-500 delay-150">
+                                    <h4 className="text-xl font-black leading-none mb-1">Frontend Co-Lead</h4>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-primary">GDG Bambili</p>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
 
-                    <motion.div variants={item} className="col-span-12 md:col-span-6 lg:col-span-4 flex">
-                        <TechStack />
-                    </motion.div>
-
                     {/* Latest Blog Post Card */}
-                    {latestPost ? (
-                        <motion.div variants={item} className="col-span-12 lg:col-span-8">
-                            <Link href={`/blog/${latestPost.slug}`} className="glass-card p-0 flex flex-col justify-end group relative overflow-hidden min-h-[300px] block h-full">
-                                {/* Background Image */}
-                                <div className="absolute inset-0">
+                    <motion.div
+                        variants={item}
+                        className="glass-card col-span-12 md:col-span-6 lg:col-span-4 p-0 group flex flex-col relative overflow-hidden"
+                    >
+                        {latestPost ? (
+                            <Link href={`/blog/${latestPost.slug}`} className="p-8 h-full flex flex-col justify-between block relative z-10">
+                                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 -z-10">
                                     <img
                                         src={latestPost.coverImage}
                                         alt={latestPost.title}
-                                        className="h-full w-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-110 transition-all duration-1000"
+                                        className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-1000"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
                                 </div>
-
-                                <div className="relative z-10 p-8 md:p-12">
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <span className="text-primary font-bold tracking-widest text-xs uppercase">{latestPost.category}</span>
-                                        <span className="w-1 h-1 rounded-full bg-white/20" />
-                                        <span className="text-white/40 font-medium text-xs uppercase tracking-widest">{latestPost.date}</span>
+                                <div className="flex flex-col h-full">
+                                    <div className="flex items-center justify-between mb-8">
+                                        <h3 className="text-sm font-bold uppercase tracking-[0.2em] opacity-30">Latest Insight</h3>
+                                        <ArrowUpRight className="h-4 w-4 opacity-30 group-hover:opacity-100 group-hover:text-primary transition-all" />
                                     </div>
-
-                                    <h3 className="text-2xl md:text-3xl font-black mb-3 group-hover:translate-x-2 transition-transform duration-500 line-clamp-2">
-                                        {latestPost.title}
-                                    </h3>
-
-                                    <p className="text-white/60 max-w-2xl text-base mb-6 line-clamp-2 group-hover:text-white/80 transition-colors">
-                                        {latestPost.excerpt}
-                                    </p>
-
-                                    <div className="flex items-center gap-2 font-bold text-white group-hover:gap-4 transition-all text-sm uppercase tracking-widest">
-                                        Read Latest Article <ArrowRight className="h-4 w-4" />
+                                    <div className="mt-auto">
+                                        <h4 className="text-2xl font-black leading-tight mb-2 group-hover:text-primary transition-colors line-clamp-2">{latestPost.title}</h4>
+                                        <p className="text-sm text-white/40 font-medium line-clamp-2">{latestPost.excerpt}</p>
                                     </div>
                                 </div>
                             </Link>
-                        </motion.div>
-                    ) : (
-                        /* Fallback or Visual Hook if no posts */
-                        <motion.div variants={item} className="glass-card col-span-12 lg:col-span-8 p-1 relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                            <div className="h-full w-full bg-[#080808] rounded-[1.8rem] flex items-center justify-center p-8 md:p-20">
-                                <div className="w-full aspect-video border border-white/10 rounded-xl relative overflow-hidden backdrop-blur-3xl bg-white/2 shadow-2xl">
-                                    <div className="absolute top-4 left-4 flex gap-2">
-                                        <div className="h-2 w-2 rounded-full bg-white/20" />
-                                        <div className="h-2 w-2 rounded-full bg-white/20" />
-                                    </div>
-                                    <div className="absolute inset-x-8 top-16 h-2 w-1/3 bg-white/10 rounded-full" />
-                                    <div className="absolute inset-x-8 top-24 space-y-2">
-                                        <div className="h-1 w-full bg-white/5 rounded-full" />
-                                        <div className="h-1 w-2/3 bg-white/5 rounded-full" />
-                                    </div>
-                                </div>
+                        ) : (
+                            <div className="p-8 h-full flex flex-col justify-center items-center opacity-20 text-center">
+                                <p className="text-xs font-bold uppercase tracking-widest">No articles yet</p>
                             </div>
-                        </motion.div>
-                    )}
+                        )}
+                    </motion.div>
 
+                    {/* Tech Stack Card */}
+                    <motion.div
+                        variants={item}
+                        className="col-span-12 md:col-span-12 lg:col-span-4 flex"
+                    >
+                        <TechStack />
+                    </motion.div>
                 </motion.div>
             </div>
         </section>

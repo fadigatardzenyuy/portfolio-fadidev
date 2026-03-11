@@ -61,19 +61,6 @@ export default function ResumeClient() {
 
                             <div className="mb-8">
                                 <div className="flex justify-between items-baseline mb-2">
-                                    <h3 className="text-xl font-bold">Web Development Instructor</h3>
-                                    <span className="text-sm font-bold text-gray-500">2025 – Present</span>
-                                </div>
-                                <div className="text-primary font-bold mb-3">Internship Training Program</div>
-                                <ul className="list-disc list-outside ml-4 space-y-1 text-gray-700">
-                                    <li>Mentored interns in HTML, CSS, JavaScript, React, and frontend best practices.</li>
-                                    <li>Guided students from beginner to intermediate developer level.</li>
-                                    <li>Designed coding challenges and real-world development tasks.</li>
-                                </ul>
-                            </div>
-
-                            <div className="mb-8">
-                                <div className="flex justify-between items-baseline mb-2">
                                     <h3 className="text-xl font-bold">Frontend Developer</h3>
                                     <span className="text-sm font-bold text-gray-500">2026 (1 Month Contract)</span>
                                 </div>
@@ -82,6 +69,19 @@ export default function ResumeClient() {
                                     <li>Developed responsive user interfaces for a real estate platform.</li>
                                     <li>Built reusable UI components and improved layout responsiveness.</li>
                                     <li>Collaborated with backend developers to integrate APIs.</li>
+                                </ul>
+                            </div>
+
+                            <div className="mb-8">
+                                <div className="flex justify-between items-baseline mb-2">
+                                    <h3 className="text-xl font-bold">Web Development Instructor</h3>
+                                    <span className="text-sm font-bold text-gray-500">2025 – Present</span>
+                                </div>
+                                <div className="text-primary font-bold mb-3">Internship Training Program</div>
+                                <ul className="list-disc list-outside ml-4 space-y-1 text-gray-700">
+                                    <li>Mentored interns in HTML, CSS, JavaScript, React, and frontend best practices.</li>
+                                    <li>Guided students from beginner to intermediate developer level.</li>
+                                    <li>Designed coding challenges and real-world development tasks.</li>
                                 </ul>
                             </div>
 
@@ -117,15 +117,15 @@ export default function ResumeClient() {
                             <div className="space-y-6">
                                 <div>
                                     <h3 className="text-lg font-bold">Zigex Internship Platform</h3>
-                                    <p className="text-gray-700">Platform connecting students with internship opportunities. Tech Stack: Next.js, React, Tailwind CSS</p>
+                                    <p className="text-gray-700">Platform connecting students with internship opportunities. <br /><span className="text-xs font-bold text-primary uppercase tracking-widest">Tech Stack: Next.js, React, Tailwind CSS</span></p>
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold">Logistics Tracking Platform</h3>
-                                    <p className="text-gray-700">Shipment tracking system allowing users to track packages using tracking codes. Tech Stack: Laravel, JavaScript, HTML, CSS</p>
+                                    <p className="text-gray-700">Shipment tracking system allowing users to track packages using tracking codes. <br /><span className="text-xs font-bold text-primary uppercase tracking-widest">Tech Stack: Laravel, JavaScript, HTML, CSS</span></p>
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold">Pet Rental & E-Commerce Platform</h3>
-                                    <p className="text-gray-700">Online platform for pet rentals and product sales. Tech Stack: Next.js, React, Tailwind CSS</p>
+                                    <p className="text-gray-700">Online platform for pet rentals and product sales. <br /><span className="text-xs font-bold text-primary uppercase tracking-widest">Tech Stack: Next.js, React, Tailwind CSS</span></p>
                                 </div>
                             </div>
                         </section>
@@ -177,7 +177,8 @@ export default function ResumeClient() {
                         <section>
                             <h2 className="text-lg font-black uppercase tracking-widest border-b border-gray-200 pb-2 mb-4">Education</h2>
                             <div>
-                                <p className="text-sm text-gray-700">Self-Taught Software Developer with continuous learning in Next.js development, modern React architecture, and web application performance.</p>
+                                <p className="text-sm text-gray-700 uppercase font-bold text-primary mb-2">Self-Taught Software Developer</p>
+                                <p className="text-xs text-gray-500 leading-relaxed italic">Continuous learning in Next.js development, modern React architecture, and web application performance.</p>
                             </div>
                         </section>
 
