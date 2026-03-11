@@ -39,18 +39,29 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-12"
+                    className="flex flex-col sm:flex-row gap-8 sm:gap-0 sm:items-center sm:justify-between mb-12"
                 >
-                    <div className="flex items-center gap-2">
-                        <div className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center rounded-lg bg-primary text-white font-black text-[10px] md:text-xs">
-                            FD
+                    {/* Top Row for Mobile: Logo & Presence */}
+                    <div className="flex items-center justify-between w-full sm:w-auto">
+                        <div className="flex items-center gap-2">
+                            <div className="h-6 w-6 md:h-8 md:w-8 flex items-center justify-center rounded-lg bg-primary text-white font-black text-[10px] md:text-xs">
+                                FD
+                            </div>
+                            <span className="text-lg md:text-xl font-black tracking-tighter uppercase whitespace-nowrap">FadidevStudio</span>
                         </div>
-                        <span className="text-lg md:text-xl font-black tracking-tighter uppercase whitespace-nowrap">FadidevStudio</span>
+
+                        {/* Mobile-only Presence */}
+                        <div className="sm:hidden">
+                            <HeaderPresence />
+                        </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-12 w-full sm:w-auto">
-                        <HeaderPresence />
-                        <nav className="flex items-center gap-6">
+                    {/* Desktop Presence and Nav Links */}
+                    <div className="flex items-center justify-center sm:justify-end gap-12 w-full sm:w-auto">
+                        <div className="hidden sm:block">
+                            <HeaderPresence />
+                        </div>
+                        <nav className="flex items-center justify-center gap-8">
                             <Magnetic strength={0.2}>
                                 <a href="/blog" className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors py-2">
                                     Blog
