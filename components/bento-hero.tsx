@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { BlogPost } from '@/lib/blog';
 import { TechStack } from './tech-stack-card';
@@ -143,50 +143,69 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                     {/* Leadership Roles Card */}
                     <motion.div
                         variants={item}
-                        className="glass-card col-span-12 md:col-span-6 lg:col-span-4 p-8 group flex flex-col justify-between"
+                        className="glass-card col-span-12 md:col-span-6 lg:col-span-6 p-8 group flex flex-col justify-between"
                     >
                         <div className="relative">
                             <h3 className="text-sm font-bold uppercase tracking-[0.2em] opacity-30 mb-8">Leadership</h3>
                             <div className="space-y-6">
                                 <div className="group-hover:translate-x-2 transition-transform duration-500">
-                                    <h4 className="text-xl font-black leading-none mb-1">Web Dev Lead</h4>
-                                    <p className="text-xs font-bold uppercase tracking-widest text-primary">SEED</p>
+                                    <h4 className="text-2xl font-black leading-none mb-1">Web Dev Lead</h4>
+                                    <p className="text-sm font-bold uppercase tracking-widest text-primary">SEED</p>
                                 </div>
                                 <div className="group-hover:translate-x-2 transition-transform duration-500 delay-75">
-                                    <h4 className="text-xl font-black leading-none mb-1">Web Dev Instructor</h4>
-                                    <p className="text-xs font-bold uppercase tracking-widest text-primary">Mentorship</p>
+                                    <h4 className="text-2xl font-black leading-none mb-1">Web Dev Instructor</h4>
+                                    <p className="text-sm font-bold uppercase tracking-widest text-primary">Internship Program</p>
                                 </div>
                                 <div className="group-hover:translate-x-2 transition-transform duration-500 delay-150">
-                                    <h4 className="text-xl font-black leading-none mb-1">Frontend Co-Lead</h4>
-                                    <p className="text-xs font-bold uppercase tracking-widest text-primary">GDG Bambili</p>
+                                    <h4 className="text-2xl font-black leading-none mb-1">Co-Lead Frontend</h4>
+                                    <p className="text-sm font-bold uppercase tracking-widest text-primary">GDG Bambili</p>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
 
-                    {/* Latest Blog Post Card */}
+                    {/* Tech Stack Card */}
                     <motion.div
                         variants={item}
-                        className="glass-card col-span-12 md:col-span-6 lg:col-span-4 p-0 group flex flex-col relative overflow-hidden"
+                        className="col-span-12 md:col-span-6 lg:col-span-6 flex"
+                    >
+                        <TechStack />
+                    </motion.div>
+
+                    {/* Latest Blog Post Card - Full Width */}
+                    <motion.div
+                        variants={item}
+                        className="glass-card col-span-12 p-0 group flex flex-col relative overflow-hidden min-h-[400px]"
                     >
                         {latestPost ? (
-                            <Link href={`/blog/${latestPost.slug}`} className="p-8 h-full flex flex-col justify-between block relative z-10">
-                                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 -z-10">
+                            <Link href={`/blog/${latestPost.slug}`} className="p-8 md:p-12 h-full flex flex-col justify-end block relative z-10">
+                                <div className="absolute inset-0 transition-opacity duration-1000 -z-10">
                                     <img
                                         src={latestPost.coverImage}
                                         alt={latestPost.title}
-                                        className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                                        className="h-full w-full object-cover opacity-30 group-hover:opacity-10 group-hover:scale-105 transition-all duration-[2000ms]"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
                                 </div>
-                                <div className="flex flex-col h-full">
-                                    <div className="flex items-center justify-between mb-8">
-                                        <h3 className="text-sm font-bold uppercase tracking-[0.2em] opacity-30">Latest Insight</h3>
-                                        <ArrowUpRight className="h-4 w-4 opacity-30 group-hover:opacity-100 group-hover:text-primary transition-all" />
+
+                                <div className="max-w-3xl">
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <span className="text-xs font-bold font-mono uppercase tracking-[0.3em] text-primary">{latestPost.category || 'Career'}</span>
+                                        <span className="h-1 w-1 rounded-full bg-white/20" />
+                                        <span className="text-xs font-bold font-mono opacity-40 uppercase tracking-[0.3em]">{latestPost.date}</span>
                                     </div>
-                                    <div className="mt-auto">
-                                        <h4 className="text-2xl font-black leading-tight mb-2 group-hover:text-primary transition-colors line-clamp-2">{latestPost.title}</h4>
-                                        <p className="text-sm text-white/40 font-medium line-clamp-2">{latestPost.excerpt}</p>
+
+                                    <h2 className="text-3xl md:text-5xl font-black leading-[1.1] mb-6 group-hover:tracking-tight transition-all duration-700">
+                                        {latestPost.title}
+                                    </h2>
+
+                                    <p className="text-lg text-white/50 font-medium mb-8 line-clamp-2 max-w-2xl group-hover:text-white/80 transition-colors">
+                                        {latestPost.excerpt}
+                                    </p>
+
+                                    <div className="flex items-center gap-3 text-sm font-black uppercase tracking-[0.3em] group-hover:gap-6 transition-all duration-500">
+                                        <span>Read Latest Article</span>
+                                        <ArrowRight className="h-4 w-4 text-primary" />
                                     </div>
                                 </div>
                             </Link>
@@ -195,14 +214,6 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                                 <p className="text-xs font-bold uppercase tracking-widest">No articles yet</p>
                             </div>
                         )}
-                    </motion.div>
-
-                    {/* Tech Stack Card */}
-                    <motion.div
-                        variants={item}
-                        className="col-span-12 md:col-span-12 lg:col-span-4 flex"
-                    >
-                        <TechStack />
                     </motion.div>
                 </motion.div>
             </div>
