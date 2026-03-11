@@ -71,6 +71,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { LenisProvider } from "@/components/lenis-provider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -85,12 +87,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="aurora-bg">
-            <div className="aurora-mesh" />
-          </div>
-          <div className="noise-overlay" />
-          <CommandCenter />
-          {children}
+          <LenisProvider>
+            <div className="aurora-bg">
+              <div className="aurora-mesh" />
+            </div>
+            <div className="noise-overlay" />
+            <CommandCenter />
+            {children}
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>

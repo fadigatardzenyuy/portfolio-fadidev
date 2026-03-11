@@ -50,6 +50,7 @@
       0 0 0 1px rgba(255, 255, 255, 0.05) inset,
       0 20px 50px -12px rgba(0, 0, 0, 0.5);
     animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    will-change: transform, opacity;
   }
 
   .bento-grid {
@@ -73,6 +74,7 @@
     opacity: 0.03;
     pointer-events: none;
     animation: noise 0.5s steps(2) infinite;
+    will-change: transform;
   }
 
   .aurora-bg {
@@ -83,6 +85,7 @@
     background: #030303;
     filter: blur(100px);
     opacity: 0.4;
+    will-change: transform;
   }
 
   .aurora-mesh {
@@ -181,7 +184,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background: #030303;
 }
 
