@@ -109,11 +109,11 @@ export default async function BlogPostPage({ params }: Props) {
                             </span>
                         </div>
 
-                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8 md:mb-12">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] md:leading-[1.0] mb-8 md:mb-12">
                             {post.title}
                         </h1>
 
-                        <p className="text-lg md:text-2xl text-white/50 font-medium leading-relaxed max-w-3xl border-l border-white/10 pl-6 md:pl-10 ml-1">
+                        <p className="text-xl md:text-2xl text-white/50 font-medium leading-relaxed max-w-3xl border-l border-white/10 pl-6 md:pl-10 ml-1">
                             {post.excerpt}
                         </p>
                     </div>
