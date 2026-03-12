@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Writing',
-    description: 'Thoughts on engineering, design systems, and the evolving web landscape by Abdul Fadiga.',
+    description: 'Insights and thoughts on engineering, design systems, and the evolving web landscape by Abdul Fadiga.',
     alternates: {
         canonical: '/blog',
     },
@@ -23,7 +23,7 @@ export default function BlogListingPage() {
                     <Link href="/" className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors mb-8 font-bold text-sm tracking-widest uppercase">
                         <ArrowLeft className="h-4 w-4" /> Back to Portfolio
                     </Link>
-                    <h1 className="editorial-heading mb-6">Writing.</h1>
+                    <h1 className="editorial-heading mb-6">Writing by Abdul Fadiga.</h1>
                     <p className="text-xl text-white/60 max-w-2xl">
                         Thoughts on engineering, design systems, and the evolving web landscape.
                     </p>

@@ -115,7 +115,7 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                                 <div className="absolute -inset-2 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-700"></div>
                                 <img
                                     src="/profile.jpg"
-                                    alt="Abdul Fadiga"
+                                    alt="Abdul Fadiga - UI/UX Engineer & Full-Stack Developer"
                                     className="relative h-44 w-44 aspect-square rounded-2xl border-2 border-white/10 object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.05] group-hover:-rotate-2"
                                 />
                             </div>
