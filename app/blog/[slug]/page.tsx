@@ -6,9 +6,9 @@ import ReactMarkdown from 'react-markdown';
 import { Metadata } from 'next';
 
 interface Props {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
 export async function generateStaticParams() {
@@ -64,8 +64,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 import { ReadingProgress } from "@/components/reading-progress";
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-    const post = await getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: Props) {
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
 
     if (!post) {
         notFound();
@@ -76,33 +77,43 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <ReadingProgress />
 
             {/* Hero / Header */}
-            <header className="relative w-full h-[60vh] min-h-[400px] flex items-end">
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                    <img src={post.coverImage} alt={post.title} className="h-full w-full object-cover opacity-60" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/80 to-transparent" />
+            <header className="relative w-full min-h-[70vh] md:min-h-[85vh] flex items-end pt-24 pb-12 md:pb-24 overflow-hidden">
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="h-full w-full object-cover opacity-40 scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent" />
+                    <div className="absolute inset-0 bg-[#030303]/30" />
                 </div>
 
-                <div className="px-6 md:px-12 lg:px-24 w-full relative z-10 pb-12">
-                    <div className="mx-auto max-w-3xl">
-                        <Link href="/blog" className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors mb-8 font-bold text-sm tracking-widest uppercase">
-                            <ArrowLeft className="h-4 w-4" /> Back
+                <div className="px-6 md:px-12 lg:px-24 w-full relative z-10">
+                    <div className="mx-auto max-w-4xl">
+                        <Link
+                            href="/blog"
+                            className="inline-flex items-center gap-2 text-white/40 hover:text-primary transition-all mb-12 md:mb-20 font-black text-[10px] md:text-xs tracking-[0.3em] uppercase group"
+                        >
+                            <ArrowLeft className="h-3 w-3 group-hover:-translate-x-1 transition-transform" />
+                            <span>Back to Writing</span>
                         </Link>
 
-                        <div className="flex items-center gap-4 mb-6">
-                            <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-xs font-bold uppercase tracking-widest text-primary">
+                        <div className="flex items-center gap-4 mb-6 md:mb-10">
+                            <span className="px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/20 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-primary">
                                 {post.category}
                             </span>
-                            <span className="text-white/60 text-sm font-bold uppercase tracking-widest">
+                            <div className="h-px w-8 bg-white/20" />
+                            <span className="text-white/40 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
                                 {post.readTime}
                             </span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-4">
+                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8 md:mb-12">
                             {post.title}
                         </h1>
 
-                        <p className="text-xl text-white/60 font-medium leading-relaxed max-w-2xl">
+                        <p className="text-lg md:text-2xl text-white/50 font-medium leading-relaxed max-w-3xl border-l border-white/10 pl-6 md:pl-10 ml-1">
                             {post.excerpt}
                         </p>
                     </div>
@@ -110,8 +121,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             </header>
 
             {/* Content */}
-            <article className="px-6 md:px-12 lg:px-24">
-                <div className="mx-auto max-w-3xl prose prose-invert prose-lg prose-headings:font-black prose-p:text-white/70 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-li:text-white/70 prose-strong:text-white">
+            <article className="px-6 md:px-12 lg:px-24 py-12 md:py-24">
+                <div className="mx-auto max-w-3xl prose prose-invert prose-lg md:prose-xl prose-headings:font-black prose-p:text-white/70 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-li:text-white/70 prose-strong:text-white prose-img:rounded-2xl">
                     <ReactMarkdown>{post.content}</ReactMarkdown>
                 </div>
             </article>
