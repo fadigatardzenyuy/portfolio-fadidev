@@ -61,10 +61,15 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                         <div className="hidden sm:block">
                             <HeaderPresence />
                         </div>
-                        <nav className="flex items-center justify-center gap-8">
+                        <nav className="flex items-center justify-center gap-6">
                             <Magnetic strength={0.2}>
                                 <a href="/blog" className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors py-2">
                                     Blog
+                                </a>
+                            </Magnetic>
+                            <Magnetic strength={0.2}>
+                                <a href="/projects" className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors py-2">
+                                    Projects
                                 </a>
                             </Magnetic>
                             <Magnetic strength={0.2}>
@@ -96,8 +101,8 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                             </h1>
                         </div>
                         <p className="max-w-xl text-xl font-medium text-white/60 leading-relaxed">
-                            I bridge the gap between world-class design and robust engineering.
-                            Currently leading frontend strategy at <span className="text-white">SEED</span> and community efforts at <span className="text-white">GDG</span>.
+                            I care as much about how something looks and feels as how it's built.
+                            Right now that means leading frontend at <span className="text-white">SEED</span> and running community work at <span className="text-white">GDG</span>.
                         </p>
                     </motion.div>
 
@@ -168,8 +173,8 @@ export function BentoHero({ latestPost }: BentoHeroProps) {
                                     <p className="text-sm font-bold uppercase tracking-widest text-primary">Internship Program</p>
                                 </div>
                                 <div className="group-hover:translate-x-2 transition-transform duration-500 delay-150">
-                                    <h4 className="text-2xl font-black leading-none mb-1">Co-Lead Frontend</h4>
-                                    <p className="text-sm font-bold uppercase tracking-widest text-primary">GDG Bambili</p>
+                                    <h4 className="text-2xl font-black leading-none mb-1">Web Lead</h4>
+                                    <p className="text-sm font-bold uppercase tracking-widest text-primary">GDG Bamenda</p>
                                 </div>
                             </div>
                         </div>

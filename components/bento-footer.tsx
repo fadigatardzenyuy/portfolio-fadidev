@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { ContactForm } from './contact-form';
 
 export function BentoFooter() {
     return (
@@ -14,28 +15,24 @@ export function BentoFooter() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                        className="glass-card col-span-12 md:col-span-8 p-8 md:p-12 flex flex-col justify-between group"
+                        className="glass-card col-span-12 md:col-span-8 p-8 md:p-12 flex flex-col gap-10"
                     >
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-8 md:mb-12 group-hover:tracking-tight transition-all duration-700">
-                            Let&apos;s build the <br />
-                            <span className="text-primary italic">next big thing</span>.
-                        </h2>
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div>
+                            <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-3">
+                                Let&apos;s build the <br />
+                                <span className="text-primary italic">next big thing</span>.
+                            </h2>
+                            <p className="text-white/40 text-sm font-medium">Available for freelance projects and full-time opportunities.</p>
+                        </div>
+                        <ContactForm />
+                        <div className="flex flex-col sm:flex-row gap-4 pt-2 border-t border-white/5">
                             <motion.a
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                href="mailto:fadidevstudio@gmail.com"
-                                className="px-10 py-4 bg-primary text-white rounded-full font-black hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all flex items-center justify-center translate-all duration-500"
-                            >
-                                Hire Abdul
-                            </motion.a>
-                            <motion.a
-                                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.05)' }}
-                                whileTap={{ scale: 0.95 }}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
                                 href="/resume"
-                                className="px-10 py-4 border border-white/10 rounded-full font-black transition-all flex items-center justify-center"
+                                className="px-8 py-3 border border-white/10 rounded-full font-black transition-all flex items-center justify-center text-sm hover:bg-white/5"
                             >
-                                Resume
+                                View Resume
                             </motion.a>
                         </div>
                     </motion.div>
@@ -76,7 +73,9 @@ export function BentoFooter() {
                             </motion.a>
                             <motion.a
                                 whileHover={{ y: -5, backgroundColor: 'rgba(99,102,241,0.2)' }}
-                                href="#"
+                                href="https://x.com/fadidev"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="aspect-square glass-card bg-white/2 flex items-center justify-center transition-all duration-500"
                             >
                                 <Twitter className="h-6 w-6" />

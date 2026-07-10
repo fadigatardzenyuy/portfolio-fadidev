@@ -2,31 +2,37 @@
 
 import { ArrowUpRight } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 
 const PROJECTS = [
     {
-        title: 'Zigex Internship Platform',
+        title: 'Zigex',
         category: 'Next.js • React • Tailwind CSS',
         span: 'col-span-12 lg:col-span-12',
         color: 'from-blue-500/10',
-        description: 'Platform connecting students with internship opportunities.',
-        image: '/blog/hello-world.png'
+        description: 'AI-powered matching that connects students to internship opportunities — profiles and listings are embedded and ranked by similarity.',
+        image: '/projects/zigex/landing.png',
+        slug: 'zigex',
+        href: 'https://github.com/fadigatardzenyuy',
     },
     {
-        title: 'Logistics Tracking Platform',
-        category: 'Laravel • JavaScript • HTML • CSS',
+        title: 'CamLand',
+        category: 'Next.js • Django REST Framework • PostGIS',
         span: 'col-span-12 md:col-span-7',
-        color: 'from-emerald-500/10',
-        description: 'Shipment tracking system allowing users to track packages using tracking codes.',
-        image: '/blog/hello-world.png'
+        color: 'from-amber-500/10',
+        description: 'A digital land registry for Cameroon — parcels mapped as geospatial polygons with searchable ownership records.',
+        image: '/projects/camland/hero.png',
+        slug: 'camland',
     },
     {
-        title: 'Pet Rental & E-Commerce Platform',
+        title: 'Roxy Puppy Club',
         category: 'Next.js • React • Tailwind CSS',
         span: 'col-span-12 md:col-span-5',
         color: 'from-sky-500/10',
-        description: 'Online platform for pet rentals and product sales.',
-        image: '/blog/hello-world.png'
+        description: 'A live e-commerce storefront for a pet business — breed catalog, cart-style inquiries, and one-tap WhatsApp handoff.',
+        image: '/projects/pet-rental/catalog.png',
+        slug: 'pet-rental',
+        href: 'https://roxypuppyclub.com',
     }
 ];
 
@@ -80,9 +86,11 @@ export function BentoProjects() {
                             className={`glass-card ${project.span} p-1 relative group cursor-pointer`}
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${project.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                            <div className="h-full w-full bg-[#080808] rounded-[2.3rem] p-6 md:p-10 flex flex-col justify-between overflow-hidden relative">
-
-                                {/* Project Image (Auto-shows if file exists) - Hidden on mobile to remove overlay text */}
+                            <Link
+                                href={`/projects/${project.slug}`}
+                                className="h-full w-full bg-[#080808] rounded-[2.3rem] p-6 md:p-10 flex flex-col justify-between overflow-hidden relative block"
+                            >
+                                {/* Project Image */}
                                 <div className="absolute inset-x-0 bottom-0 px-10 pt-32 transition-transform duration-700 group-hover:scale-[1.02] hidden md:block">
                                     <div className="h-full w-full rounded-t-[2rem] overflow-hidden relative shadow-2xl border border-white/10 translation-transform duration-1000 group-hover:translate-y-4">
                                         <div className="absolute inset-0 bg-white/5" />
@@ -110,10 +118,20 @@ export function BentoProjects() {
                                         {project.description}
                                     </p>
                                 </div>
-                            </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </motion.div>
+
+                <div className="mt-8 flex justify-center">
+                    <Link
+                        href="/projects"
+                        className="group inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-white/50 hover:text-white transition-colors"
+                    >
+                        View All Projects
+                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Link>
+                </div>
             </div>
         </section>
     );

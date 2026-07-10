@@ -6,8 +6,8 @@ export function LeadershipSection() {
             desc: 'Leading frontend development, mentoring developers, and building production-ready web solutions with a focus on product strategy.',
         },
         {
-            title: 'Co-Lead (Frontend)',
-            org: 'GDG On Campus Bambili',
+            title: 'Web Lead',
+            org: 'GDG On Campus Bamenda',
             desc: 'Supporting frontend learning, organizing workshops, and contributing to the regional developer community growth.',
         },
     ];

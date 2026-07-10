@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Next.js Developer",
     "TypeScript Expert",
     "Web Developer Lead SEED",
-    "GDG On Campus Bambili",
+    "GDG On Campus Bamenda",
     "Modern web applications",
     "SaaS design and development",
   ],
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
 };
 
 import { LenisProvider } from "@/components/lenis-provider";
-
 import { CustomCursor } from "@/components/custom-cursor";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -100,7 +100,7 @@ export default function RootLayout({
                 },
                 {
                   "@type": "Organization",
-                  "name": "GDG On Campus Bambili"
+                  "name": "GDG On Campus Bamenda"
                 }
               ]
             })
@@ -123,6 +123,7 @@ export default function RootLayout({
             <CommandCenter />
             {children}
             <MobileFAB />
+            <Analytics />
           </LenisProvider>
         </ThemeProvider>
       </body>

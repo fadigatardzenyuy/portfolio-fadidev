@@ -1,9 +1,9 @@
 export function PhilosophySection() {
     const VALUES = [
-        { title: 'User-first thinking', desc: 'Prioritizing real human needs over technical constraints.' },
-        { title: 'Design clarity', desc: 'Simplicity and intentionality in every pixel and interaction.' },
-        { title: 'Scalable systems', desc: 'Building robust architectures that grow with the product.' },
-        { title: 'Knowledge sharing', desc: 'Empowering communities through mentorship and open-source.' },
+        { title: 'User-first thinking', desc: "Start from what the person needs, not what's easiest to build." },
+        { title: 'Design clarity', desc: 'Every screen should make sense without an explanation.' },
+        { title: 'Scalable systems', desc: 'Code that still makes sense once the product doubles in size.' },
+        { title: 'Knowledge sharing', desc: 'Teaching what I know in the open, instead of sitting on it.' },
     ];
 
     return (
@@ -19,12 +19,13 @@ export function PhilosophySection() {
                         </h2>
                         <div className="space-y-6 text-xl text-[#555] dark:text-[#aaa] leading-relaxed">
                             <p>
-                                I am a full-stack developer guided by UI/UX principles. By bridging the gap between design and engineering,
-                                I create cohesive digital experiences where frontend quality is the strongest edge.
+                                I'm a full-stack developer who thinks about UI/UX first. Sitting close to both the design
+                                and the code keeps them honest with each other — it's usually why the frontend ends up
+                                feeling the way it should.
                             </p>
                             <p>
-                                My background in leadership at SEED and GDG has taught me that great software is as much about
-                                people and processes as it is about code.
+                                Leading at SEED and GDG taught me that most of what makes software good has less to do
+                                with the code and more to do with the people and process around it.
                             </p>
                         </div>
                     </div>

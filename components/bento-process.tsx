@@ -19,11 +19,11 @@ const item: Variants = {
 
 export function BentoProcess() {
     const STEPS = [
-        { title: 'Understand', desc: 'Problem space & requirements.' },
-        { title: 'Design', desc: 'System & Visual architecture.' },
-        { title: 'Build', desc: 'High-performance engineering.' },
-        { title: 'Integrate', desc: 'Full-stack & API connectivity.' },
-        { title: 'Iterate', desc: 'Continuous product refinement.' },
+        { title: 'Understand', desc: "Figure out what's actually being asked for, not just what's on the ticket." },
+        { title: 'Design', desc: 'Sketch out how it should work before touching any code.' },
+        { title: 'Build', desc: 'Write it, then test it against how people will actually use it.' },
+        { title: 'Integrate', desc: 'Wire the frontend to whatever backend and APIs are behind it.' },
+        { title: 'Iterate', desc: 'Fix what turns out to be wrong once real people are using it.' },
     ];
 
     return (
@@ -73,7 +73,7 @@ export function BentoProcess() {
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                         <h4 className="text-3xl font-black text-center text-white italic tracking-tighter relative z-10 group-hover:scale-[1.02] transition-transform duration-700">
-                            "Producing software that feels like magic through <br /> precise engineering and thoughtful design."
+                            "Good software just works. <br /> Getting there is the hard part."
                         </h4>
                     </motion.div>
                 </motion.div>

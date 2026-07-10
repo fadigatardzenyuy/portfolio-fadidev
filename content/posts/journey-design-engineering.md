@@ -25,7 +25,7 @@ My recent contract as a **Frontend Developer for a Real Estate Exchange** reinfo
 
 ### Community & Mentorship
 
-One of the most rewarding aspects of my career has been the ability to give back. As the **Frontend Co-Lead at GDG On Campus Bambili** and a **Web Development Instructor**, I’ve had the privilege of mentoring interns and students. 
+One of the most rewarding aspects of my career has been the ability to give back. As the **Web Lead at GDG On Campus Bamenda** and a **Web Development Instructor**, I’ve had the privilege of mentoring interns and students. 
 
 > "Teaching isn't just about sharing knowledge; it's about seeing the spark of realization in a student's eyes as they debug their first React component."
 

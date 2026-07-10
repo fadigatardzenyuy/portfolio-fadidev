@@ -11,7 +11,7 @@ export function HeroSection() {
                 <div className="mb-12 flex flex-wrap gap-x-4 gap-y-2">
                     <span className="section-subheading">Web Developer Lead @ SEED</span>
                     <span className="text-[#888]">•</span>
-                    <span className="section-subheading">Co-Lead GDG On Campus Bambili</span>
+                    <span className="section-subheading">Web Lead, GDG On Campus Bamenda</span>
                 </div>
 
                 {/* Headline */}
@@ -23,8 +23,8 @@ export function HeroSection() {
                 {/* Subheadline & CTAs */}
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12">
                     <p className="max-w-xl text-xl font-medium leading-relaxed text-[#555] dark:text-[#aaa] text-balance">
-                        I design intuitive user experiences and build scalable web applications,
-                        with a strong focus on frontend quality, usability, and performance.
+                        I design things that make sense to use, then build the web apps behind them —
+                        most of my attention goes into how the frontend actually feels.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-6">

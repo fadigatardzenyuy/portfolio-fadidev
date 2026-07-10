@@ -2,12 +2,13 @@
 
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Command, X, ArrowRight, FileText, Layout, Mail, Github, Linkedin } from 'lucide-react';
+import { Search, Command, X, ArrowRight, FileText, Layout, Mail, Github, Linkedin, ClipboardCopy, ScrollText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export function CommandCenter() {
     const [isOpen, setIsOpen] = React.useState(false);
     const [query, setQuery] = React.useState('');
+    const [copied, setCopied] = React.useState(false);
     const router = useRouter();
 
     React.useEffect(() => {
@@ -26,11 +27,14 @@ export function CommandCenter() {
     }, []);
 
     const actions = [
-        { id: 'blog', name: 'Go to Blog', icon: FileText, shortcut: 'G B', url: '/blog' },
         { id: 'home', name: 'Go Home', icon: Layout, shortcut: 'G H', url: '/' },
+        { id: 'blog', name: 'Go to Blog', icon: FileText, shortcut: 'G B', url: '/blog' },
+        { id: 'resume', name: 'View Resume', icon: ScrollText, shortcut: 'G R', url: '/resume' },
+        { id: 'projects', name: 'View All Projects', icon: Layout, shortcut: 'G P', url: '/projects' },
         { id: 'github', name: 'GitHub Profile', icon: Github, shortcut: 'S G', url: 'https://github.com/fadigatardzenyuy' },
         { id: 'linkedin', name: 'LinkedIn Connect', icon: Linkedin, shortcut: 'S L', url: 'https://www.linkedin.com/in/abdul-fadiga-775a5a284/' },
         { id: 'contact', name: 'Send Email', icon: Mail, shortcut: 'S E', url: 'mailto:fadidevstudio@gmail.com' },
+        { id: 'copy-email', name: copied ? 'Email Copied!' : 'Copy Email Address', icon: ClipboardCopy, shortcut: 'C E', url: '__copy_email__' },
     ];
 
     const filteredActions = query === ''
@@ -40,6 +44,12 @@ export function CommandCenter() {
         );
 
     const handleSelect = (url: string) => {
+        if (url === '__copy_email__') {
+            navigator.clipboard.writeText('fadidevstudio@gmail.com');
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+            return;
+        }
         if (url.startsWith('http') || url.startsWith('mailto')) {
             window.open(url, '_blank');
         } else {

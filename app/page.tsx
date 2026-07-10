@@ -3,6 +3,7 @@ import { BentoProjects } from '@/components/bento-projects';
 import { SkillsGrid } from '@/components/skills-grid';
 import { BentoProcess } from '@/components/bento-process';
 import { BentoFooter } from '@/components/bento-footer';
+import { TestimonialsSection } from '@/components/testimonials-section';
 import { getAllPosts } from '@/lib/blog';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <BentoProjects />
       <BentoProcess />
       <SkillsGrid />
+      <TestimonialsSection />
       <BentoFooter />
     </main>
   );
