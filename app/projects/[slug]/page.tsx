@@ -3,6 +3,9 @@ import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { JsonLd } from '@/components/JsonLd';
+
+const SITE_URL = 'https://fadidev-studio.vercel.app';
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -41,6 +44,31 @@ export default async function ProjectPage({ params }: Props) {
 
     return (
         <main className="min-h-screen bg-[#030303] text-white selection:bg-primary selection:text-white pb-24">
+            <JsonLd
+                data={{
+                    '@context': 'https://schema.org',
+                    '@graph': [
+                        {
+                            '@type': 'CreativeWork',
+                            name: project.title,
+                            description: project.description,
+                            image: project.coverImage,
+                            creator: { '@id': `${SITE_URL}/#person` },
+                            url: `${SITE_URL}/projects/${project.slug}`,
+                            dateCreated: project.year,
+                            keywords: project.stack.join(', '),
+                        },
+                        {
+                            '@type': 'BreadcrumbList',
+                            itemListElement: [
+                                { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+                                { '@type': 'ListItem', position: 2, name: 'Projects', item: `${SITE_URL}/projects` },
+                                { '@type': 'ListItem', position: 3, name: project.title, item: `${SITE_URL}/projects/${project.slug}` },
+                            ],
+                        },
+                    ],
+                }}
+            />
 
             {/* Hero */}
             <header className="relative w-full min-h-[70vh] flex items-end pt-24 pb-12 md:pb-24 overflow-hidden">

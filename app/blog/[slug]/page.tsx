@@ -9,6 +9,9 @@ import { Metadata } from 'next';
 import { ReadingProgress } from '@/components/reading-progress';
 import { TableOfContents } from '@/components/table-of-contents';
 import { parseHeadings } from '@/lib/utils';
+import { JsonLd } from '@/components/JsonLd';
+
+const SITE_URL = 'https://fadidev-studio.vercel.app';
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -91,6 +94,32 @@ export default async function BlogPostPage({ params }: Props) {
 
     return (
         <main className="min-h-screen bg-[#030303] text-white selection:bg-primary selection:text-white pb-24">
+            <JsonLd
+                data={{
+                    '@context': 'https://schema.org',
+                    '@graph': [
+                        {
+                            '@type': 'BlogPosting',
+                            headline: post.title,
+                            description: post.excerpt,
+                            image: [post.coverImage],
+                            datePublished: post.date,
+                            dateModified: post.date,
+                            author: { '@type': 'Person', name: 'Abdul Fadiga', url: SITE_URL },
+                            publisher: { '@id': `${SITE_URL}/#person` },
+                            mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+                        },
+                        {
+                            '@type': 'BreadcrumbList',
+                            itemListElement: [
+                                { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+                                { '@type': 'ListItem', position: 2, name: 'Writing', item: `${SITE_URL}/blog` },
+                                { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
+                            ],
+                        },
+                    ],
+                }}
+            />
             <ReadingProgress />
 
             {/* Hero */}

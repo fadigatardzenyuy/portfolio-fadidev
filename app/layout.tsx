@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { CommandCenter } from "@/components/command-center";
 import { MobileFAB } from "@/components/mobile-fab";
+import { JsonLd } from "@/components/JsonLd";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,13 +60,14 @@ export const metadata: Metadata = {
     description: "UI/UX-focused full-stack developer building scalable, user-centered web products.",
     creator: "@fadidev",
   },
-  icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
-  },
   alternates: {
     canonical: "/",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#6366F1",
+  colorScheme: "dark",
 };
 
 import { LenisProvider } from "@/components/lenis-provider";
@@ -80,30 +82,37 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Abdul Fadiga",
-              "url": "https://fadidev-studio.vercel.app",
-              "jobTitle": "UI/UX Engineer & Full-Stack Developer",
-              "sameAs": [
-                "https://github.com/fadigatardzenyuy",
-                "https://www.linkedin.com/in/abdul-fadiga-775a5a284/",
-              ],
-              "worksFor": [
-                {
-                  "@type": "Organization",
-                  "name": "SEED"
-                },
-                {
-                  "@type": "Organization",
-                  "name": "GDG On Campus Bamenda"
-                }
-              ]
-            })
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://fadidev-studio.vercel.app/#person",
+                name: "Abdul Fadiga",
+                url: "https://fadidev-studio.vercel.app",
+                jobTitle: "UI/UX Engineer & Full-Stack Developer",
+                image: "https://fadidev-studio.vercel.app/profile.jpg",
+                sameAs: [
+                  "https://github.com/fadigatardzenyuy",
+                  "https://www.linkedin.com/in/abdul-fadiga-775a5a284/",
+                ],
+                worksFor: [
+                  { "@type": "Organization", name: "SEED" },
+                  { "@type": "Organization", name: "GDG On Campus Bamenda" },
+                ],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://fadidev-studio.vercel.app/#website",
+                url: "https://fadidev-studio.vercel.app",
+                name: "Abdul Fadiga | UI/UX-Focused Full-Stack Developer",
+                description:
+                  "Abdul Fadiga is a UI/UX-focused full-stack developer and product engineer building scalable, user-centered web products.",
+                publisher: { "@id": "https://fadidev-studio.vercel.app/#person" },
+                inLanguage: "en-US",
+              },
+            ],
           }}
         />
       </head>
